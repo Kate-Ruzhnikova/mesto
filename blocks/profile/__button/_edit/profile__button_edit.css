@@ -1,0 +1,39 @@
+.profile__button_edit {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #FFFFFF;
+    background-image: url(../../../../images/popup_open.png);
+    background-repeat: no-repeat;
+    background-color: #000000;
+    background-position: center;
+    background-size: 50%;
+    right: 0;
+    margin-left: 10px;
+    top: 15px;
+    position: absolute;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 1140px) {
+    .profile__button_edit {
+        margin-right: 35px;
+    }
+}
+
+@media screen and (max-width: 984px) {
+    .profile__button_edit {
+        margin-right: 60px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .profile__button_edit {
+        width: 18px;
+        height: 18px;
+        margin-left: 10px;
+        margin-right: 20px;
+        top: 8px;
+    
+    }
+}

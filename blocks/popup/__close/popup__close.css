@@ -1,0 +1,13 @@
+.popup__close {
+    margin: 0;
+    border: 0;
+    background-image: url(../../../images/popup_close.png);
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    cursor: pointer;
+    background-color: #000000;
+}
