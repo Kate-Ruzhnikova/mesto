@@ -4,7 +4,7 @@ console.log('popupElement'); /*Выводим в консоль наш элем�
 
 /*Кнопки закрытия и открытия*/
 const popupCloseButtonElement = document.querySelector('.popup__close');
-const popupOpenButtonElement = document.querySelector('.profile__button_edit');
+const popupOpenButtonElement = document.querySelector('.profile__edit-button');
 
 const popupContainer = document.querySelector('.popup__container');
 const popupName = popupContainer.querySelector('.popup__name');
