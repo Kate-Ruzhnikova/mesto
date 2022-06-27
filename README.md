@@ -20,5 +20,6 @@
 Так жев в вышеизложенных блоках применены такие технологии веб-разработки, как flex-контейнер и свойства к нему относящиеся (flex-direction, justify-content, align-items и др.)
 
 Ссылка на проект:
+https://kate-ruzhnikova.github.io/mesto/
 
 
