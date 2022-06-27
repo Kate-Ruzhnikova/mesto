@@ -1,0 +1,11 @@
+.content__section {
+    box-sizing: border-box; /*потому что ширина 100%, если не указать, то к 100 прибавится паддинг с каждой стороны*/
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1140px) {
+    .content__section {
+        width: 80%;
+    }
+}

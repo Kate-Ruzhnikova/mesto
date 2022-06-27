@@ -7,13 +7,13 @@ const popupCloseButtonElement = document.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__button_edit');
 
 const popupContainer = document.querySelector('.popup__container');
-const popupName = document.querySelector('.popup__name');
-const popupDescription = document.querySelector('.popup__description');
+const popupName = popupContainer.querySelector('.popup__name');
+const popupDescription = popupContainer.querySelector('.popup__description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 
-const inputName = profileName;
-const inputDescription = profileDescription;
+const inputName = popupName;
+const inputDescription = popupDescription;
 inputName.value = profileName.textContent;
 inputDescription.value = profileDescription.textContent;
 
@@ -40,6 +40,7 @@ function formSubmitHandler (evt) {
     evt.preventDefault();
     profileName.textContent = inputName.value;
     profileDescription.textContent = inputDescription.value;
+    popupElement.classList.remove('popup__is-opened');
 }
 popupContainer.addEventListener('submit', formSubmitHandler);
 

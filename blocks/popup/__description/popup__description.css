@@ -4,7 +4,8 @@
     margin-top: 27px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     line-height: 17px;
-    text-align: center;
     height: 27px;
+    font-weight: 400;
+    font-size: 14px;       
     
 }

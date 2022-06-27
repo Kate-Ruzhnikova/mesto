@@ -6,3 +6,9 @@
     line-height: 17px;
     height: 27px;
 }
+
+@media screen and (max-width: 568px) {
+    .popup__name {
+        margin-top: 75px;
+    }
+}

@@ -15,17 +15,11 @@
 
 }
 
-@media screen and (max-width: 1140px) {
-    .profile__button_edit {
-        margin-right: 35px;
-    }
+.profile__button_edit:hover {
+    opacity: .6;
+
 }
 
-@media screen and (max-width: 984px) {
-    .profile__button_edit {
-        margin-right: 60px;
-    }
-}
 
 @media screen and (max-width: 900px) {
     .profile__button_edit {

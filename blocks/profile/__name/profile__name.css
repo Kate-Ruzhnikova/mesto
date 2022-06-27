@@ -6,18 +6,6 @@
     padding: 0 0 9px 0;
 }
 
-@media screen and (max-width: 1140px) {
-    .profile__name {
-        font-size: 38px;
-    }
-}
-
-@media screen and (max-width: 984px) {
-    .profile__name {
-        font-size: 30px;
-    }
-}
-
 @media screen and (max-width: 900px) {
     .profile__name {
         font-size: 27px;
