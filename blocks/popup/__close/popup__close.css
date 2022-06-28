@@ -6,10 +6,10 @@
     height: 32px;
     background-size: cover;
     position: absolute;
-    top: 235px;
-    right: 385px;
+    top: -40px;
+    right: -40px;
     cursor: pointer;
-    background-color: #000000;
+    background-color: transparent;
 }
 
 .popup__close:hover {
