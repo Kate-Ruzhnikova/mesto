@@ -7,11 +7,9 @@
     background-color: #000000;
     background-position: center;
     background-size: 50%;
-    right: 0;
-    margin-left: 10px;
-    top: 15px;
-    position: absolute;
     cursor: pointer;
+    margin: 15px 0 0 18px;
+    padding: 0;
 
 }
 
@@ -23,11 +21,10 @@
 
 @media screen and (max-width: 900px) {
     .profile__edit-button {
+        margin: 8px 0 0 12px;
         width: 18px;
         height: 18px;
-        margin-left: 10px;
-        margin-right: 20px;
-        top: 8px;
+
     
     }
 }

@@ -16,10 +16,13 @@
 
     <main class="content page__content">
         <section class="profile">
-            <img class="profile__avatar" src="./images/profile_photo.jpg" alt="Фото профиля">
             <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто</h1> <button class="profile__edit-button"></button>
-                <p class="profile__description">Исследователь океана</p>
+                <img class="profile__avatar" src="./images/profile_photo.jpg" alt="Фото профиля">
+                <div class="profile__information">
+                    <div><h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <p class="profile__description">Исследователь океана</p></div>
+                    <button class="profile__edit-button"></button>
+                </div>
             </div>
             <button class="profile__add-button"></button>
         </section>
@@ -29,42 +32,42 @@
                 <img class="elements__photo" src="./images/Карачаевск.jpg" alt="Карачаевск">
                 <div class="elements__group">
                     <p class="elements__text">Карачаевск</p>
-                    <div class="elements__like elements__like_active"></div>
+                    <button class="elements__like elements__like_active"></button>
                 </div>
             </div>
             <div class="elements__card">
                 <img class="elements__photo" src="./images/Эльбрус.jpg" alt="Эльбрус">
                 <div class="elements__group">
                     <p class="elements__text">Гора Эльбрус</p>
-                    <div class="elements__like"></div>
+                    <button class="elements__like"></button>
                 </div>
             </div>
             <div class="elements__card">
                 <img class="elements__photo" src="./images/Домбай.jpg" alt="Домбай">
                 <div class="elements__group">
                     <p class="elements__text">Домбай</p>
-                    <div class="elements__like"></div>
+                    <button class="elements__like"></button>
                 </div>
             </div>
             <div class="elements__card">
                 <img class="elements__photo" src="./images/Эльбрус.jpg" alt="Эльбрус">
                 <div class="elements__group">
                     <p class="elements__text">Гора Эльбрус</p>
-                    <div class="elements__like"></div>
+                    <button class="elements__like"></button>
                 </div>
             </div>
             <div class="elements__card">
                 <img class="elements__photo" src="./images/Домбай.jpg" alt="Домбай">
                 <div class="elements__group">
                     <p class="elements__text">Домбай</p>
-                    <div class="elements__like"></div>
+                    <button class="elements__like"></button>
                 </div>
             </div>
             <div class="elements__card">
                 <img class="elements__photo" src="./images/Карачаевск.jpg" alt="Карачаевск">
                 <div class="elements__group">
                     <p class="elements__text">Карачаево-Черкесия</p>
-                    <div class="elements__like"></div>
+                    <button class="elements__like"></button>
                 </div>
             </div>
 
@@ -77,7 +80,7 @@
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <input class="popup__name" type="text">
                     <input class="popup__description" type="text">
-                    <button class="popup__save" type="submit">Сохранить</button>
+                    <input class="popup__save" type="submit" value="Сохранить">
                 </form>
             </div>
         </section>
