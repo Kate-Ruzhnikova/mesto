@@ -1,62 +1,34 @@
-document.querySelector('.popup'); /*обращаемся к селектору*/
-const popupElement = document.querySelector('.popup'); /*сохранили в переменную*/
-console.log('popupElement'); /*Выводим в консоль наш элемент*/
+const popupElement = document.querySelector('.popup');
 
-/*Кнопки закрытия и открытия*/
 const popupCloseButtonElement = document.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__edit-button');
 
-const popupContainer = document.querySelector('.popup__container');
-const popupName = popupContainer.querySelector('.popup__name');
-const popupDescription = popupContainer.querySelector('.popup__description');
+const popupSave = document.querySelector('.popup__save');
+const popupcontent = document.querySelector('.popup__content');
+const popupName = popupcontent.querySelector('#popup-name');
+const popupDescription = popupcontent.querySelector('#popup-description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 
-const inputName = popupName;
-const inputDescription = popupDescription;
-inputName.value = profileName.textContent;
-inputDescription.value = profileDescription.textContent;
-
-const togglePopupVisibility = function() {
-    popupElement.classList.toggle('.popup__is-opened');
-
-}
 const openPopup = function() {
-    popupElement.classList.add('popup__is-opened');
+    popupElement.classList.add('popup__opened');
+    popupName.value = profileName.textContent;
+    popupDescription.value = profileDescription.textContent;
     
 }
+
 const closePopup = function() {
-    inputName.value = profileName.textContent;
-    inputDescription.value = profileDescription.textContent;
-    popupElement.classList.remove('popup__is-opened');
+    popupElement.classList.remove('popup__opened');
     
 } 
 
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
 
-
 function formSubmitHandler (evt) {
     evt.preventDefault();
-    profileName.textContent = inputName.value;
-    profileDescription.textContent = inputDescription.value;
-    popupElement.classList.remove('popup__is-opened');
+    profileName.textContent = popupName.value;
+    profileDescription.textContent = popupDescription.value;
+    closePopup();
 }
-popupContainer.addEventListener('submit', formSubmitHandler);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+popupcontent.addEventListener('submit', formSubmitHandler);

@@ -2,7 +2,6 @@
     max-width: 880px;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
     margin: 0 200px 0 200px;
     align-items: center;
     justify-content: space-between;
@@ -18,10 +17,8 @@
 
 @media screen and (max-width: 900px) {
     .profile {
-        width: 100%;
         max-width: 282px;
-        padding: 0 19px;
-        justify-content: space-between;
         flex-direction: column;
+        width: 100%;
     }
 }
