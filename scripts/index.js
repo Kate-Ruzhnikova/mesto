@@ -11,14 +11,14 @@ const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 
 const openPopup = function() {
-    popupElement.classList.add('popup__opened');
+    popupElement.classList.add('popup_opened');
     popupName.value = profileName.textContent;
     popupDescription.value = profileDescription.textContent;
     
 }
 
 const closePopup = function() {
-    popupElement.classList.remove('popup__opened');
+    popupElement.classList.remove('popup_opened');
     
 } 
 
