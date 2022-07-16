@@ -1,4 +1,5 @@
 .popup__container-img {
     position: relative;
     background-color: transparent;
+    padding: 0;
 }

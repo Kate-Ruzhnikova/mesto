@@ -1,6 +1,5 @@
 .figure__img {
     max-width: 75vw;
     max-height: 75vh;
-    object-fit: cover;
-    background-size: cover;
+    object-fit: contain;
 }
