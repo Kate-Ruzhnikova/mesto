@@ -7,7 +7,6 @@ const selectors = {
 
     /**elements*/
     listCards: '.elements__list',
-    elements: '.elements',
 
     /**popup*/
     popup: '.popup',
@@ -39,7 +38,6 @@ const popupOpenButtonProfile = document.querySelector(selectors.popupOpenButtonP
 const popupOpenButtonCard = document.querySelector(selectors.popupOpenButtonCard);
 
 const listCards = document.querySelector(selectors.listCards);
-const elements = document.querySelector(selectors.elements);
 
 const popupProfile = document.querySelector(selectors.popupProfile);
 const popupContainer = popupProfile.querySelector(selectors.popupContainer);
@@ -66,16 +64,16 @@ function closePopup(popup) {
     popup.classList.remove('popup_opened');
 } 
 
-function createCard(item) {                               
+function createCard(cardData) {                               
     const cardTemplate = templateCard.cloneNode(true);
     const cardPhoto = cardTemplate.querySelector('.elements__photo');
     const likeButton = cardTemplate.querySelector('.elements__like');
     const textCard = cardTemplate.querySelector('.elements__text');
     const deleteButtonCard = cardTemplate.querySelector('.elements__delete-button');
 
-    cardPhoto.src = item.link;
-    cardPhoto.alt = item.name;
-    textCard.textContent = item.name;
+    cardPhoto.src = cardData.link;
+    cardPhoto.alt = cardData.name;
+    textCard.textContent = cardData.name;
     cardPhoto.addEventListener ('click', openPopupImg);
 
     likeButton.addEventListener ('click', (evt) => {
@@ -117,8 +115,8 @@ function handleAddCardSubmit(evt) {
     inputLink.value = ""; 
 }
 
-initialCards.forEach((item) => {
-    const templateCard = createCard(item);
+initialCards.forEach((cardData) => {
+    const templateCard = createCard(cardData);
     listCards.append(templateCard);
 });
 
