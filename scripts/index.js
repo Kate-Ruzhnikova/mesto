@@ -128,13 +128,14 @@ function handleAddCardSubmit(evt) {
     cardNew.name = inputTitle.value;
     cardNew.link = inputLink.value;
     const templateCard = createCard(cardNew);
-    evt.target.reset();                     
-
+    evt.target.reset();
+            
     listCards.prepend(templateCard);
-    closePopup(popupCard);
+    closePopup();
 
-    //inputTitle.value = ""; //**После сабмита очистили поля формы*/
-    //inputLink.value = ""; 
+    inputTitle.value = ""; //**После сабмита очистили поля формы*/
+    inputLink.value = ""; 
+    
 }
 
 initialCards.forEach((cardData) => {         

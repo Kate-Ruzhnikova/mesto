@@ -1,4 +1,4 @@
-.popup__input_type_error {
+.popup__error {
     font-size: 12px;
     line-height: 15px;
     color: #ff0000;
@@ -8,7 +8,7 @@
   }
   
   @media screen and (max-width: 550px) {
-    .popup__input_type_error {
+    .popup__error {
       max-width: 240px;
       font-size: 10px;
       line-height: 13px;

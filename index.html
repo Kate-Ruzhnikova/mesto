@@ -40,9 +40,9 @@
             <form class="popup__content" name="popupFormProfile" method="post" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <input id="popup-name" name="popup-name" required placeholder="Имя" class="popup__input" type="text" minlength="2" maxlength="40" value="">
-                <span class="popup__input_type_error"></span>
+                <span class="popup__error"></span>
                 <input id="popup-description" name="popup-description" required placeholder="О себе" class="popup__input" type="text" minlength="2" maxlength="200"value="">
-                <span class="popup__input_type_error"></span>
+                <span class="popup__error"></span>
                 <input disabled class="popup__save" name="popup-save" type="submit" value="Сохранить">
             </form>
         </div>
@@ -54,9 +54,9 @@
             <form class="popup__content" name="popupFormCard" method="post" novalidate>
                 <h2 class="popup__title">Новое место</h2>
                 <input id="popup-title-card" name="popup-title-card" required placeholder="Название" class="popup__input" type="text" minlength="2" maxlength="30" value="">
-                <span class="popup__input_type_error"></span>
+                <span class="popup__error"></span>
                 <input id="popup-link" name="popup-link" required placeholder="Ссылка на картинку" class="popup__input" type="url">
-                <span class="popup__input_type_error"></span>
+                <span class="popup__error"></span>
                 <input disabled class="popup__save popup__save_type_invalid" name="popup-save" type="submit" value="Сохранить">
             </form>
         </div>

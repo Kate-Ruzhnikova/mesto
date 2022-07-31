@@ -2,7 +2,7 @@ const formProfile = {
     form: '.popup__content',
     button: '.popup__save',
     buttonInvalid: 'popup__save_type_invalid',
-    borderInvalid: 'popup__input_type_error'
+    borderInvalid: 'popup__error'
 };
 
 function enableValidation(config) {
