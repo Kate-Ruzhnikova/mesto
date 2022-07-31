@@ -1,7 +1,7 @@
 .popup__input {
     width: 100%;
     border: none;
-    margin-top: 29px;
+    margin-top: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     line-height: 17px;
     height: 27px;
@@ -9,6 +9,3 @@
     font-size: 14px;
 }
 
-.popup__input:nth-of-type(1) {
-    margin-top: 0;
-}

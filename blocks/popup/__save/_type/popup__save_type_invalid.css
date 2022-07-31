@@ -1,0 +1,6 @@
+.popup__save_type_invalid {
+    background-color: #fff;
+border: 1px solid #000000;
+  color: #000;
+  opacity: .2;
+}
