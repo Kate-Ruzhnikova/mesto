@@ -1,4 +1,4 @@
-const formProfile = {
+const namesForValidation = {
     form: '.popup__content',
     button: '.popup__save',
     buttonInvalid: 'popup__save_type_invalid',
@@ -34,5 +34,7 @@ function setSubmitButtonState(form, config) {
     }
   }
   
-  enableValidation(formProfile);
+  /** вызов функции находится в конец index.js, скрипт подключен перед ним. Для того, чтобы модуль валидации был полностью 
+   независимым от index.js и его можно было использовать во многих местах  */
+  //enableValidation(namesForValidation); 
 

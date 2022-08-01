@@ -6,7 +6,7 @@ const selectors = {
     popupOpenButtonCard: '.profile__add-button',
 
     /**elements*/
-    listCards: '.elements__list',
+    cardsList: '.elements__list',
 
     /**popup*/
     popup: '.popup',
@@ -14,7 +14,7 @@ const selectors = {
         
     /**popupProfile*/
     popupProfile: '.popup_profile',
-    popupContainer: '.popup__container',
+    popupContainerProfile: '.popup__container',
     popupName: '#popup-name',
     popupDescription: '#popup-description',
 
@@ -37,12 +37,12 @@ const profileDescription = document.querySelector(selectors.profileDescription);
 const popupOpenButtonProfile = document.querySelector(selectors.popupOpenButtonProfile);
 const popupOpenButtonCard = document.querySelector(selectors.popupOpenButtonCard);
 
-const listCards = document.querySelector(selectors.listCards);
+const cardsList = document.querySelector(selectors.cardsList);
 
 const popupProfile = document.querySelector(selectors.popupProfile);
-const popupContainer = popupProfile.querySelector(selectors.popupContainer);
-const popupName = popupContainer.querySelector(selectors.popupName);
-const popupDescription = popupContainer.querySelector(selectors.popupDescription);
+const popupContainerProfile = popupProfile.querySelector(selectors.popupContainerProfile);
+const popupName = popupContainerProfile.querySelector(selectors.popupName);
+const popupDescription = popupContainerProfile.querySelector(selectors.popupDescription);
 
 const popupCard = document.querySelector(selectors.popupCard);
 const popupContainerCard = popupCard.querySelector(selectors.popupContainerCard);
@@ -62,11 +62,9 @@ function openPopup(popup) {
 }
 
 function closePopup(popup) {
-    const openedPopup = document.querySelector('.popup_opened')
-    if (openedPopup) {
-        openedPopup.classList.remove('popup_opened');
-        document.removeEventListener('keydown', closeEsc);
-    }
+    const openedPopup = document.querySelector('.popup_opened');
+    openedPopup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closeEsc);
 } 
 
  /**закрытие попапа на оверлей */
@@ -79,7 +77,8 @@ function closePopupOnClick(event, popup) {
  /**закрытие попапа на esc */
 function closeEsc(evt) {
     if(evt.key === 'Escape') {
-        closePopup();
+        const openedPopup = document.querySelector('.popup_opened');
+        closePopup(openedPopup);
     }
 }
 
@@ -128,19 +127,24 @@ function handleAddCardSubmit(evt) {
     cardNew.name = inputTitle.value;
     cardNew.link = inputLink.value;
     const templateCard = createCard(cardNew);
-    evt.target.reset();
+    evt.target.reset();                       //**После сабмита очистили поля формы*/
             
-    listCards.prepend(templateCard);
+    cardsList.prepend(templateCard);
+    disableSaveButton(evt.target);
     closePopup();
-
-    inputTitle.value = ""; //**После сабмита очистили поля формы*/
-    inputLink.value = ""; 
     
 }
 
+/**функция добавления класса невалидности для кнопки сохранения */
+function disableSaveButton (popup) {
+    const button = popup.querySelector('.popup__save');
+    button.setAttribute('disabled', true);
+    button.classList.add('popup__save_type_invalid');
+  }
+
 initialCards.forEach((cardData) => {         
     const templateCard = createCard(cardData);
-    listCards.append(templateCard);
+    cardsList.append(templateCard);
 });
 
 function openPopupProfile() {
@@ -158,9 +162,11 @@ popupOpenButtonCard.addEventListener('click', () => {
 
 popupCloseButtonElement.forEach((button) => {
     const popup = button.closest('.popup');
-    button.addEventListener('click', () => {closePopup(popup);});
-    popup.addEventListener('click', (event) => {closePopupOnClick(event, popup);});
+    button.addEventListener('click', (evt) => {if (evt.target.classList.contains('popup__close')) {closePopup(popup);}});
+    popup.addEventListener('click', (evt) => {closePopupOnClick(evt, popup);});
 });
 
-popupContainer.addEventListener('submit', handleProfileFormSubmit);
+popupContainerProfile.addEventListener('submit', handleProfileFormSubmit);
 popupContainerCard.addEventListener('submit', handleAddCardSubmit);
+
+enableValidation(namesForValidation);
