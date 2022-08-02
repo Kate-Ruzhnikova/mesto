@@ -14,7 +14,7 @@ const selectors = {
         
     /**popupProfile*/
     popupProfile: '.popup_profile',
-    popupContainerProfile: '.popup__container',
+    popupProfileContainer: '.popup__container',
     popupName: '#popup-name',
     popupDescription: '#popup-description',
 
@@ -40,9 +40,9 @@ const popupOpenButtonCard = document.querySelector(selectors.popupOpenButtonCard
 const cardsList = document.querySelector(selectors.cardsList);
 
 const popupProfile = document.querySelector(selectors.popupProfile);
-const popupContainerProfile = popupProfile.querySelector(selectors.popupContainerProfile);
-const popupName = popupContainerProfile.querySelector(selectors.popupName);
-const popupDescription = popupContainerProfile.querySelector(selectors.popupDescription);
+const popupProfileContainer = popupProfile.querySelector(selectors.popupProfileContainer);
+const popupName = popupProfileContainer.querySelector(selectors.popupName);
+const popupDescription = popupProfileContainer.querySelector(selectors.popupDescription);
 
 const popupCard = document.querySelector(selectors.popupCard);
 const popupContainerCard = popupCard.querySelector(selectors.popupContainerCard);
@@ -68,8 +68,8 @@ function closePopup(popup) {
 } 
 
  /**закрытие попапа на оверлей */
-function closePopupOnClick(event, popup) {
-    if (event.target === popup) {
+function closePopupOnClick(evt, popup) {
+    if (evt.target === popup || evt.target.classList.contains('popup__close')) {
       closePopup(popup);
     }
   }
@@ -81,6 +81,11 @@ function closeEsc(evt) {
         closePopup(openedPopup);
     }
 }
+
+popupCloseButtonElement.forEach((button) => {
+    const popup = button.closest('.popup');
+    popup.addEventListener('click', (evt) => {closePopupOnClick(evt, popup);});
+});
 
 function createCard(cardData) {
     const cardTemplate = templateCard.cloneNode(true);
@@ -160,13 +165,5 @@ popupOpenButtonCard.addEventListener('click', () => {
     openPopup(popupCard);
 });
 
-popupCloseButtonElement.forEach((button) => {
-    const popup = button.closest('.popup');
-    button.addEventListener('click', (evt) => {if (evt.target.classList.contains('popup__close')) {closePopup(popup);}});
-    popup.addEventListener('click', (evt) => {closePopupOnClick(evt, popup);});
-});
-
-popupContainerProfile.addEventListener('submit', handleProfileFormSubmit);
+popupProfileContainer.addEventListener('submit', handleProfileFormSubmit);
 popupContainerCard.addEventListener('submit', handleAddCardSubmit);
-
-enableValidation(namesForValidation);
